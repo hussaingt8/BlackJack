@@ -87,16 +87,17 @@ rpsFrontEnd = (humanImageChoice, botImageChoice, finalMessage) => {
   humanDiv = `<img src="${imagesDatabase[humanImageChoice]}" height=150 width=150 style="box-shadow: 0px 10px 50px rgba(37, 50, 233, 1);">`;
   messageDiv = `<h1 style="color:${finalMessage["color"]}; font-size: 60px; padding: 30px;">${finalMessage["message"]}</h1>`;
   botDiv = `<img src="${imagesDatabase[botImageChoice]}" height=150 width=150 style="box-shadow: 0px 10px 50px rgba(243, 38, 24, 1);">`;
-  resetButton = `<hr /><button class="btn btn-danger" onclick="resetRPS()">Reset</button>`;
+  resetButton = `<hr /><button class="btn btn-danger" onclick="resetRPS()">Play Again</button>`;
 
-  document.getElementById("flex-box-rps-div").innerHTML = `${humanDiv}${messageDiv}${botDiv}${resetButton}`;
+  document.getElementById("flex-box-rps-div").innerHTML = `${humanDiv}${messageDiv}${botDiv}`;
+  document.getElementById("play-again-div").innerHTML = `${resetButton}`;
 };
 
 const rpsReset = document.getElementById("flex-box-rps-div").innerHTML;
 
 resetRPS = () => {
-  console.log(rpsReset);
   document.getElementById("flex-box-rps-div").innerHTML = rpsReset;
+  document.getElementById("play-again-div").innerHTML = "";
 };
 
 var all_buttons = document.getElementsByTagName("button");
